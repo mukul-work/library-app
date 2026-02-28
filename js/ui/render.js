@@ -20,24 +20,4 @@ export function renderLibrary() {
 
         container.appendChild(card);
     });
-
-    document.getElementById("library")
-        .addEventListener("click", (e) => {
-        const card = e.target.closest(".book-card");
-        if (!card) return;
-
-        const id = card.dataset.id;
-        const book = myLibrary.find(b => b.id === id);
-
-        if (e.target.classList.contains("remove-btn")) {
-            const index = myLibrary.findIndex(b => b.id === id);
-            myLibrary.splice(index, 1);
-            renderLibrary();
-        }
-
-        if (e.target.classList.contains("toggle-btn")) {
-            book.toggleRead();
-            renderLibrary();
-        }
-    });
 }
