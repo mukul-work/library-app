@@ -1,1 +1,1 @@
-export const bookCollection = [];
+export const library = [];

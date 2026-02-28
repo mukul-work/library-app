@@ -1,10 +1,10 @@
-import { myLibrary } from "../data/library.js";
+import { library } from "../data/library.js";
 
 export function renderLibrary() {
     const container = document.getElementById("library");
     container.innerHTML = "";
 
-    myLibrary.forEach((book) => {
+    library.forEach((book) => {
         const card = document.createElement("div");
         card.classList.add("book-card");
         card.dataset.id = book.id;

@@ -1,4 +1,4 @@
-import {myLibrary} from "../data/library.js"
+import {library} from "../data/library.js"
 import Book from "../models/Book.js"
 import { renderLibrary } from "../ui/render.js"
 
@@ -21,7 +21,7 @@ export function initEvents(){
         const read = document.getElementById("read").checked;
 
         const newBook = new Book(title, author, pages, read);
-        myLibrary.push(newBook);
+        library.push(newBook);
 
         renderLibrary();
         dialog.close();
@@ -34,11 +34,11 @@ export function initEvents(){
         if (!card) return;
 
         const id = card.dataset.id;
-        const book = myLibrary.find(b => b.id === id);
+        const book = library.find(b => b.id === id);
 
         if (e.target.classList.contains("remove-btn")) {
-            const index = myLibrary.findIndex(b => b.id === id);
-            myLibrary.splice(index, 1);
+            const index = library.findIndex(b => b.id === id);
+            library.splice(index, 1);
             renderLibrary();
         }
 
