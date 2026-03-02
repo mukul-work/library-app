@@ -13,7 +13,9 @@ export function renderLibrary() {
             <h3>${book.title}</h3>
             <p>Author: ${book.author}</p>
             <p>Pages: ${book.pages}</p>
-            <p>Status: ${book.read ? "Read" : "Not Read"}</p>
+            <p class="status ${book.read ? "read" : "not-read"}">
+                ${book.read ? "Read" : "Not Read"}
+            </p>
             <button class="toggle-btn">Toggle Read</button>
             <button class="remove-btn">Remove</button>
         `;
